@@ -1,12 +1,26 @@
 package com.dataStructureSoln;
 
-public class StudentManagerArray { // Class name should reflect content
-    private String[] students; // Encapsulate data (private access)
+public class StudentManagerArray {
+    private String[] students;
     private int count;
 
     public StudentManagerArray(int size) {
         students = new String[size];
         count = 0;
+    }
+
+    public static void main(String[] args) {
+        StudentManagerArray sa = new StudentManagerArray(5);
+        sa.addStudent("Alice");
+        sa.addStudent("Bob");
+        sa.addStudent("Charlie");
+
+        sa.displayStudents();
+
+//        System.out.println("Index of Bob: " + sa.searchStudent("Bob"));
+
+        sa.deleteStudent("Bob");
+        sa.displayStudents();
     }
 
     public void addStudent(String name) {
@@ -45,19 +59,5 @@ public class StudentManagerArray { // Class name should reflect content
         for (int i = 0; i < count; i++) {
             System.out.println(students[i]);
         }
-    }
-
-    public static void main(String[] args) {
-        StudentManagerArray sa = new StudentManagerArray(5);
-        sa.addStudent("Alice");
-        sa.addStudent("Bob");
-        sa.addStudent("Charlie");
-
-        sa.displayStudents();
-
-        System.out.println("Index of Bob: " + sa.searchStudent("Bob"));
-
-        sa.deleteStudent("Bob");
-        sa.displayStudents();
     }
 }

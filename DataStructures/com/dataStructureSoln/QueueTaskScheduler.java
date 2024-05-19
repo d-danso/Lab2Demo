@@ -15,6 +15,16 @@ public class QueueTaskScheduler {
         size = 0;
     }
 
+    public static void main(String[] args) {
+        QueueTaskScheduler ts = new QueueTaskScheduler(10);
+        ts.addTask("Task 1");
+        ts.addTask("Task 2");
+        ts.peekTask();
+        ts.displayTasks();
+        ts.removeTask();
+        ts.displayTasks();
+    }
+
     public void addTask(String task) {
         if (size == maxCapacity) {
             throw new IllegalStateException("Queue is full");
@@ -49,15 +59,5 @@ public class QueueTaskScheduler {
             System.out.print(taskQueue[(first + i) % maxCapacity] + " ");
         }
         System.out.println();
-    }
-
-    public static void main(String[] args) {
-        QueueTaskScheduler ts = new QueueTaskScheduler(10);
-        ts.addTask("Task 1");
-        ts.addTask("Task 2");
-        ts.peekTask();
-        ts.displayTasks();
-        ts.removeTask();
-        ts.displayTasks();
     }
 }

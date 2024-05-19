@@ -30,6 +30,7 @@ public class Sorting {
             array[minIndex] = temp;
         }
     }
+
     public static void main(String[] args) {
         int[] numbers = {64, 34, 25, 12, 22, 11, 90};
         bubbleSort(numbers);
@@ -44,8 +45,8 @@ public class Sorting {
         for (int num : numbers) {
 
             System.out.print(num + " ");
+        }
+
+
     }
-
-
-}
 }

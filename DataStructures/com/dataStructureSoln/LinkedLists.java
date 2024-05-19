@@ -1,16 +1,17 @@
 package com.dataStructureSoln;
 
-public class LinkedLists{
-    static class Node {
-        int data;
-        Node next;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
+public class LinkedLists {
     Node head;
+
+    public static void main(String[] args) {
+        LinkedLists ll = new LinkedLists();
+        ll.addFirst(10);
+        ll.addLast(20);
+        ll.addAtPosition(15, 1);
+        ll.display();
+        ll.delete(15);
+        ll.display();
+    }
 
     public void addFirst(int data) {
         Node newNode = new Node(data);
@@ -78,14 +79,14 @@ public class LinkedLists{
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        LinkedLists ll = new LinkedLists();
-        ll.addFirst(10);
-        ll.addLast(20);
-        ll.addAtPosition(15, 1);
-        ll.display();
-        ll.delete(15);
-        ll.display();
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }
 

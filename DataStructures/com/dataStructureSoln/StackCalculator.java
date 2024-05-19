@@ -11,6 +11,18 @@ public class StackCalculator {
         top = -1;
     }
 
+    public static void main(String[] args) {
+        StackCalculator sc = new StackCalculator(10);
+        sc.push(10);
+        sc.push(20);
+//        sc.add();
+//        sc.multiply();
+//        sc.divide();
+        sc.subtract();
+
+        System.out.println(sc.pop());
+    }
+
     public void push(int value) {
         if (top == maxSize - 1) {
             throw new StackOverflowError("Stack is full");
@@ -57,17 +69,5 @@ public class StackCalculator {
             throw new ArithmeticException("Cannot divide by zero");
         }
         push(b / a);
-    }
-
-    public static void main(String[] args) {
-        StackCalculator sc = new StackCalculator(10);
-        sc.push(10);
-        sc.push(20);
-//        sc.add();
-//        sc.multiply();
-//        sc.divide();
-        sc.subtract();
-
-        System.out.println(sc.pop());
     }
 }
